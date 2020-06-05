@@ -22,7 +22,7 @@
       integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous"
     />
-    <title>Hello, world!</title>
+    <title>Half-life Calculator</title>
   </head>
   <body>
     <div class="container border rounded-right mt-5">
@@ -30,24 +30,31 @@
       <div class="card calculate-time m-5">
         <div class="card-body">
           What would you like to solve for:
-          <div class="btn-group btn-group-toggle ml-3" data-toggle="buttons">
+          <div
+            class="solve-for-options btn-group btn-group-toggle ml-3"
+            data-toggle="buttons"
+          >
             <label class="btn btn-secondary active">
-              <input type="radio" name="options" id="option1" checked /> Time
+              <input type="radio" name="options" class="option-time" checked />
+              Time
             </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option2" /> Half Life
+              <input type="radio" name="options" class="option-halfLife" /> Half
+              Life
             </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option3" /> Start Amount
+              <input type="radio" name="options" class="option-startAmount" />
+              Start Amount
             </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option3" /> End Amount
+              <input type="radio" name="options" class="option-endAmount" /> End
+              Amount
             </label>
           </div>
         </div>
       </div>
       <div class="card m-5">
-        <div class="card-body">
+        <div class="card-body card-main">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Input 1</span>
@@ -90,7 +97,10 @@
               Please choose a username.
             </div>
           </div>
-          <button type="button" class="btn btn-dark btn-block my-2">
+          <button
+            type="button"
+            class="calculate-button btn btn-dark btn-block my-2"
+          >
             calculate
           </button>
         </div>
