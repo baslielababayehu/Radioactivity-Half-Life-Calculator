@@ -13,20 +13,25 @@ function loadAllEvenlisteners() {
 function performCalculation() {}
 
 function displayCorrectInputGroups(e) {
-  console.log(e.target.lastChild);
+  let halfLife, time, startAmount, endAmount;
+  console.log(e.target);
   if (e.target.classList.contains('option-time')) {
+    console.log('works');
     inputGroup(time, halfLife, startAmount, endAmount);
     let cardBody = document.querySelector('.card-main');
     cardBody.appendChild(inputGroupDisplay);
-  } else if (e.target.lastChild.classList.contains('option-halfLife')) {
+  } else if (e.target.classList.contains('option-halfLife')) {
+    console.log('works');
     inputGroup(halfLife, time, startAmount, endAmount);
     let cardBody = document.querySelector('.card-main');
     cardBody.appendChild(inputGroupDisplay);
   } else if (e.target.classList.contains('option-startAmount')) {
+    console.log('works');
     inputGroup(startAmount, halfLife, time, endAmount);
     let cardBody = document.querySelector('.card-main');
     cardBody.appendChild(inputGroupDisplay);
   } else if (e.target.classList.contains('option-endAmount')) {
+    console.log('works');
     inputGroup(endAmount, halfLife, startAmount, time);
     let cardBody = document.querySelector('.card-body');
     cardBody.appendChild(inputGroupDisplay);
