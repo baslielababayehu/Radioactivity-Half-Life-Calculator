@@ -1,8 +1,25 @@
 //Define UI items
 const calculateButton = document.querySelector('.calculate-button');
 const whatAreYouSolvingFor = document.querySelector('.solve-for-options');
-// const firstCard = document.querySelector('.');
+let cardBody = document.querySelector('.card-container');
 
+cardBody.appendChild(
+  inputGroup('halfLife', 'Time', 'Start Amount', 'End Amount')
+);
+cardBody.appendChild(
+  inputGroup('startAmount', 'Half Life', 'Time', 'End Amount')
+);
+cardBody.appendChild(
+  inputGroup('endAmount', 'Half Life', 'Start Amount', 'Time')
+);
+
+let timeOption = document.querySelector('.original-card');
+let halflifeOption = document.querySelector('.halfLife-solveForoptionList');
+console.log(halflifeOption.className);
+let startAmountOption = document.querySelector(
+  '.startAmount-solveForoptionList'
+);
+let endAmountOption = document.querySelector('.endAmount-solveForoptionList');
 //load all event listeners
 loadAllEvenlisteners();
 function loadAllEvenlisteners() {
@@ -10,41 +27,39 @@ function loadAllEvenlisteners() {
   whatAreYouSolvingFor.addEventListener('click', displayCorrectInputGroups);
 }
 
-//
+//hide input groups
+halflifeOption.className = 'halfLife-solveForoptionList d-none';
+startAmountOption.className = 'startAmount-solveForoptionList d-none';
+endAmountOption.className = 'endAmount-solveForoptionList d-none';
+
 function performCalculation() {}
 
 function displayCorrectInputGroups(e) {
-  let halfLife,
-    time,
-    startAmount,
-    endAmount = '';
-  console.log(inputGroup('time', 'halfLife', 'startAmount', 'endAmount'));
-  // console.log(e.target);
+  // let halfLife,
+  //   time,
+  //   startAmount,
+  //   endAmount = '';
   if (e.target.classList.contains('option-time')) {
-    console.log('works');
-    let cardBody = document.querySelector('.original-card');
-    // cardBody.remove();
-    cardBody.appendChild(
-      inputGroup('time', 'halfLife', 'startAmount', 'endAmount')
-    );
-    console.log(cardBody.firstChild);
+    // console.log(timeOption);
+    timeOption.className = 'original-card';
+    halflifeOption.className = 'halfLife-solveForoptionList d-none';
+    startAmountOption.className = 'startAmount-solveForoptionList d-none';
+    endAmountOption.className = 'endAmount-solveForoptionList d-none';
   } else if (e.target.classList.contains('option-halfLife')) {
-    console.log('works');
-    inputGroup(halfLife, time, startAmount, endAmount);
-    let cardBody = document.querySelector('.card-main');
-    cardBody.appendChild(
-      inputGroup('halfLife', 'time', 'startAmount', 'endAmount')
-    );
+    halflifeOption.className = 'halfLife-solveForoptionList';
+    timeOption.className = 'original-card d-none';
+    startAmountOption.className = 'startAmount-solveForoptionList d-none';
+    endAmountOption.className = 'endAmount-solveForoptionList d-none';
   } else if (e.target.classList.contains('option-startAmount')) {
-    console.log('works');
-    inputGroup(startAmount, halfLife, time, endAmount);
-    let cardBody = document.querySelector('.card-main');
-    cardBody.appendChild(inputGroupDisplay);
+    startAmountOption.className = 'startAmount-solveForoptionList';
+    halflifeOption.className = 'time-solveForoptionList d-none';
+    timeOption.className = 'original-card d-none';
+    endAmountOption.className = 'endAmount-solveForoptionList d-none';
   } else if (e.target.classList.contains('option-endAmount')) {
-    console.log('works');
-    inputGroup(endAmount, halfLife, startAmount, time);
-    let cardBody = document.querySelector('.card-body');
-    cardBody.appendChild(inputGroupDisplay);
+    endAmountOption.className = 'endAmount-solveForoptionList';
+    halflifeOption.className = 'halfLife-solveForoptionList d-none';
+    startAmountOption.className = 'startAmount-solveForoptionList d-none';
+    timeOption.className = 'original-card d-none';
   }
 }
 
