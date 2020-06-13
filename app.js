@@ -1,6 +1,7 @@
 //Define UI items
 const calculateButton = document.querySelector('.calculate-button');
 const whatAreYouSolvingFor = document.querySelector('.solve-for-options');
+// const firstCard = document.querySelector('.');
 
 //load all event listeners
 loadAllEvenlisteners();
@@ -13,18 +14,27 @@ function loadAllEvenlisteners() {
 function performCalculation() {}
 
 function displayCorrectInputGroups(e) {
-  let halfLife, time, startAmount, endAmount;
-  console.log(e.target);
+  let halfLife,
+    time,
+    startAmount,
+    endAmount = '';
+  console.log(inputGroup('time', 'halfLife', 'startAmount', 'endAmount'));
+  // console.log(e.target);
   if (e.target.classList.contains('option-time')) {
     console.log('works');
-    inputGroup(time, halfLife, startAmount, endAmount);
-    let cardBody = document.querySelector('.card-main');
-    cardBody.appendChild(inputGroupDisplay);
+    let cardBody = document.querySelector('.original-card');
+    // cardBody.remove();
+    cardBody.appendChild(
+      inputGroup('time', 'halfLife', 'startAmount', 'endAmount')
+    );
+    console.log(cardBody.firstChild);
   } else if (e.target.classList.contains('option-halfLife')) {
     console.log('works');
     inputGroup(halfLife, time, startAmount, endAmount);
     let cardBody = document.querySelector('.card-main');
-    cardBody.appendChild(inputGroupDisplay);
+    cardBody.appendChild(
+      inputGroup('halfLife', 'time', 'startAmount', 'endAmount')
+    );
   } else if (e.target.classList.contains('option-startAmount')) {
     console.log('works');
     inputGroup(startAmount, halfLife, time, endAmount);
@@ -47,7 +57,8 @@ function inputGroup(
   const inputGroupDisplay = document.createElement('div');
   inputGroupDisplay.className = `${solveForName}-solveForoptionList`;
 
-  let inputGroupHTML =
+  let inputGroupHTML = document.createElement('div');
+  inputGroupHTML.innerHTML =
     '<div class="input-group">' +
     '<div class="input-group-prepend">' +
     `<span class="input-group-text">${requiredParameter1}</span>` +
@@ -57,8 +68,12 @@ function inputGroup(
     ' Please choose a username.' +
     '</div>' +
     '</div>';
+  // let inputGroupHTMLclone = inputGroupHTML.cloneNode(true);
+  // console.log(inputGroupHTML);
   inputGroupDisplay.appendChild(inputGroupHTML);
-  inputGroupHTML =
+
+  inputGroupHTML = document.createElement('div');
+  inputGroupHTML.innerHTML =
     '<div class="input-group">' +
     '<div class="input-group-prepend">' +
     `<span class="input-group-text">${requiredParameter2}</span>` +
@@ -69,7 +84,8 @@ function inputGroup(
     '</div>' +
     '</div>';
   inputGroupDisplay.appendChild(inputGroupHTML);
-  inputGroupHTML =
+  inputGroupHTML = document.createElement('div');
+  inputGroupHTML.innerHTML =
     '<div class="input-group">' +
     '<div class="input-group-prepend">' +
     `<span class="input-group-text">${requiredParameter3}</span>` +
