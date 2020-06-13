@@ -31,7 +31,7 @@
         <div class="card-body">
           What would you like to solve for:
           <div
-            class="solve-for-options btn-group btn-group-toggle ml-3"
+            class="solve-for-options btn-group btn-group-toggle ml-3 lg-9"
             data-toggle="buttons"
           >
             <div class="btn btn-secondary option-time m-0 active">
@@ -56,48 +56,60 @@
       </div>
       <div class="card m-5">
         <div class="card-body card-main">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Half-life</span>
+          <div class="original-card">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Half-life</span>
+              </div>
+              <input
+                type="text"
+                class="form-control rounded-right"
+                placeholder=""
+                required
+              />
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
             </div>
-            <input
-              type="text"
-              class="form-control rounded-right"
-              placeholder=""
-              required
-            />
-            <div class="invalid-feedback">
-              Please choose a username.
+            <div class="input-group mt-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Start Amount</span>
+              </div>
+              <input
+                type="text"
+                class="form-control rounded-right"
+                placeholder=""
+                required
+              />
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+            <div class="input-group mt-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">End amount</span>
+              </div>
+              <input
+                type="text"
+                class="form-control rounded-right"
+                placeholder=""
+                required
+              />
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
             </div>
           </div>
-          <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Start Amount</span>
-            </div>
-            <input
-              type="text"
-              class="form-control rounded-right"
-              placeholder=""
-              required
-            />
-            <div class="invalid-feedback">
-              Please choose a username.
-            </div>
+          <div class="second-card">
+            <!-- Displayed cards go here -->
           </div>
-          <div class="input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">End amount</span>
-            </div>
-            <input
-              type="text"
-              class="form-control rounded-right"
-              placeholder=""
-              required
-            />
-            <div class="invalid-feedback">
-              Please choose a username.
-            </div>
+          <div class="third-card">
+            <!-- Displayed cards go here -->
           </div>
+          <div class="fourth-card">
+            <!-- Displayed cards go here -->
+          </div>
+
           <button
             type="button"
             class="calculate-button btn btn-dark btn-block my-2"
